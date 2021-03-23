@@ -1,38 +1,109 @@
-.App {
+@import './styles/normalize';
+@import './styles/skeleton';
+
+.grid-container {
+  display: grid;
+  border-top: 1px solid lightblue;
+  border-left: 1px solid lightblue;
+}
+
+.grid-container > div {
   text-align: center;
+  border-bottom: 1px solid lightblue;
+  border-right: 1px solid lightblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container-centered {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.node-start {
+  background-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.node-end {
+  background-color: blue;
+}
+
+.node-visited {
+  background: #435871;
+  background-position: center;
+  animation: not-visited-animation 1.5s ease;
+}
+
+@keyframes not-visited-animation {
+  0% {
+    background: #8596ab;
+    transform: scale(0.2);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    background-size: 75%;
   }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    background: rgb(37, 37, 97)871;
+    transform: scale(1);
+  }
+}
+
+.short-path {
+  background-color: coral;
+  animation: short-path-animation 1.5s ease;
+}
+
+@keyframes short-path-animation {
+  0% {
+    background: salmon;
+    transform: scale(0.2);
+  }
+  25% {
+    background: orangered;
+    background-size: 75%;
+  }
+  50% {
+    background-size: 100%;
+    transform: scale(1.2);
+  }
+  100% {
+    background-size: 125%;
+    transform: scale(1);
+  }
+}
+
+.wall {
+  background: black;
+  animation: wall-animation 1s ease;
+}
+
+@keyframes wall-animation {
+  0% {
+    background: white;
+    transform: scale(0.2);
+  }
+  25% {
+    background: black;
+    background-size: 75%;
+  }
+  50% {
+    background-size: 100%;
+    transform: scale(1.2);
+  }
+  100% {
+    background-size: 125%;
+    transform: scale(1);
+  }
+}
+
+.node {
+  display: flex;
+  flex: 1;
+}
+
+.node-default:hover {
+  background-color: #61dafb;
 }
