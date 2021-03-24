@@ -1,5 +1,4 @@
-@import './styles/normalize';
-@import './styles/skeleton';
+@import 'styles/styles.css';
 
 .grid-container {
   display: grid;

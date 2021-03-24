@@ -11,14 +11,14 @@ function DataStructureVisualizer() {
 
   const GRID_SIZE: string = '27px';
 
-  const COLS: number = 25;
-  const ROWS: number = 25;
+  const ROWS: number = 21;
+  const COLS: number = 31;
 
-  let [startCol, setStartCol] = useState(1);
   let [startRow, setStartRow] = useState(ROWS/2);
+  let [startCol, setStartCol] = useState(1);
 
-  let [endCol, setEndCol] = useState(COLS - 2);
   let [endRow, setEndRow] = useState(ROWS/2);
+  let [endCol, setEndCol] = useState(COLS - 2);
 
   let [grid, setGrid] = useState(Array.from(Array(ROWS), () => new Array(COLS)));
   let [visitedNodes, setVisitedNodes] = useState(Array<Node>());
@@ -109,6 +109,8 @@ function DataStructureVisualizer() {
           console.log('END ROW ' + rIdx);
           console.log('END COL ' + cIdx);
         } else if(col.includes('wall')) {
+          console.log('WALL ROW ' + rIdx);
+          console.log('WALL COL ' + cIdx);
           newGrid[rIdx][cIdx].vertexType = VertexTypes.WALL;
           newGrid[rIdx][cIdx].distance = Infinity;
         } else {
@@ -137,11 +139,11 @@ function DataStructureVisualizer() {
   }
 
   return(
-    <React.Fragment>
-      <div style={{ display:'flex', alignItems:'center', justifyContent:'center', padding: '2em' }}>
-        <button style={{ margin: '1em' }} onClick={solvePath}>Solve Path</button>
-        <button style={{ margin: '1em' }} onClick={reset}>Reset</button>
-        <button style={{ margin: '1em' }} onClick={generateRandomMaze}>Random Maze</button>
+    <div style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%)` }}>
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'center', paddingTop: '6rem' }}>
+        <button className="btn btn-primary" style={{ margin: '1em' }} onClick={solvePath}>Solve Path</button>
+        <button className="btn btn-primary" style={{ margin: '1em' }} onClick={reset}>Reset</button>
+        <button className="btn btn-primary" style={{ margin: '1em' }} onClick={generateRandomMaze}>Random Maze</button>
       </div>
       <div className="flex-container-centered">
         <div 
@@ -157,7 +159,7 @@ function DataStructureVisualizer() {
            onMouseMove={onMouseMove} />))}
         </div>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 

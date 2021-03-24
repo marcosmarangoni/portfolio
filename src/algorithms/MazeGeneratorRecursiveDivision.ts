@@ -11,7 +11,7 @@ class MazeGeneratorRecursiveDivision {
   cols: number;
   rows: number;
 
-  constructor(cols: number, rows: number) {
+  constructor(rows: number, cols: number) {
 
     /*
     this.width = width;
@@ -69,7 +69,7 @@ class MazeGeneratorRecursiveDivision {
   }
 
   initArray(value: string) {
-    return new Array(this.rows).fill([value]).map(() => new Array(this.cols).fill(value));
+    return new Array(this.rows).fill([]).map(() => new Array(this.cols).fill([value]));
   }
 
   rand(min: number, max: number) {
@@ -170,125 +170,6 @@ class MazeGeneratorRecursiveDivision {
     this.partition(horiz+1, r2, vert+1, c2);
 
   }
-/*
-  isGap(...cells: string[]) {
-    return cells.every((array) => {
-      let row: number, col: number;
-      [row, col] = array;
-      if(this.maze[row][col].length > 0) {
-        if(!this.maze[row][col].includes("door")) {
-          return false;
-        }
-      }
-      return true;
-    });
-  }
-
-  countSteps(array: number[][], r: number, c: number, val: number, stop: boolean) {
-
-    if(!this.inBounds(r, c)) {
-      return false; // out of bounds
-    }
-
-    if(array[r][c] <= val) {
-      return false; // shorter route already mapped
-    }
-
-    if(!this.isGap([r, c])) {
-      return false; // not traversable
-    }
-
-    array[r][c] = val;
-
-    if(this.maze[r][c].includes(stop)) {
-      return true; // reached destination
-    }
-
-    this.countSteps(array, r-1, c, val+1, stop);
-    this.countSteps(array, r, c+1, val+1, stop);
-    this.countSteps(array, r+1, c, val+1, stop);
-    this.countSteps(array, r, c-1, val+1, stop);
-
-  }
-
-  getKeyLocation() {
-
-    let fromEntrance = this.initArray();
-    let fromExit = this.initArray();
-
-    this.totalSteps = -1;
-
-    for(let j = 1; j < this.cols-1; j++) {
-      if(this.maze[this.rows-1][j].includes("entrance")) {
-        this.countSteps(fromEntrance, this.rows-1, j, 0, "exit");
-      }
-      if(this.maze[0][j].includes("exit")) {
-        this.countSteps(fromExit, 0, j, 0, "entrance");
-      }
-    }
-
-    let fc = -1, fr = -1;
-
-    this.maze.forEach((row, r) => {
-      row.forEach((cell, c) => {
-        if(typeof fromEntrance[r][c] == "undefined") {
-          return;
-        }
-        let stepCount = fromEntrance[r][c] + fromExit[r][c];
-        if(stepCount > this.totalSteps) {
-          fr = r;
-          fc = c;
-          this.totalSteps = stepCount;
-        }
-      });
-    });
-
-    return [fr, fc];
-  }
-
-  placeKey() {
-
-    let fr, fc;
-    [fr, fc] = this.getKeyLocation();
-
-    this.maze[fr][fc] = ["key"];
-
-  }
-
-  display(id) {
-
-    this.parentDiv = document.getElementById(id);
-
-    if(!this.parentDiv) {
-      alert("Cannot initialise maze - no element found with id \"" + id + "\"");
-      return false;
-    }
-
-    while(this.parentDiv.firstChild) {
-      this.parentDiv.removeChild(this.parentDiv.firstChild);
-    }
-
-    const container = document.createElement("div");
-    container.id = "maze";
-    container.dataset.steps = this.totalSteps;
-
-    this.maze.forEach((row) => {
-      let rowDiv = document.createElement("div");
-      row.forEach((cell) => {
-        let cellDiv = document.createElement("div");
-        if(cell) {
-          cellDiv.className = cell.join(" ");
-        }
-        rowDiv.appendChild(cellDiv);
-      });
-      container.appendChild(rowDiv);
-    });
-
-    this.parentDiv.appendChild(container);
-
-    return true;
-  }
-*/
 }
 
 export default MazeGeneratorRecursiveDivision;
