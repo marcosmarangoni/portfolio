@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.4ebce127.chunk.css",
-    "main.js": "/portfolio/static/js/main.5ed47bab.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.5ed47bab.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.eadf372b.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.eadf372b.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.0e8da5c3.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.0e8da5c3.js.map",
     "static/js/2.b8061d72.chunk.js": "/portfolio/static/js/2.b8061d72.chunk.js",
@@ -12,7 +12,7 @@
     "index.html": "/portfolio/index.html",
     "static/css/main.4ebce127.chunk.css.map": "/portfolio/static/css/main.4ebce127.chunk.css.map",
     "static/js/2.b8061d72.chunk.js.LICENSE.txt": "/portfolio/static/js/2.b8061d72.chunk.js.LICENSE.txt",
-    "static/js/main.5ed47bab.chunk.js.LICENSE.txt": "/portfolio/static/js/main.5ed47bab.chunk.js.LICENSE.txt",
+    "static/js/main.eadf372b.chunk.js.LICENSE.txt": "/portfolio/static/js/main.eadf372b.chunk.js.LICENSE.txt",
     "static/media/bg-masthead.733fe648.jpg": "/portfolio/static/media/bg-masthead.733fe648.jpg",
     "static/media/himarket-logo.736a4060.png": "/portfolio/static/media/himarket-logo.736a4060.png"
   },
@@ -20,6 +20,6 @@
     "static/js/runtime-main.0e8da5c3.js",
     "static/js/2.b8061d72.chunk.js",
     "static/css/main.4ebce127.chunk.css",
-    "static/js/main.5ed47bab.chunk.js"
+    "static/js/main.eadf372b.chunk.js"
   ]
 }
