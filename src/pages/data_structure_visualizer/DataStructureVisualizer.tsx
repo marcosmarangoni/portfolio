@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import { VertexTypes } from '../enums';
-import { Dijkstra, MazeGeneratorBreadthFirst, MazeGeneratorRecursiveDivision  } from '../algorithms';
-import { Node } from '../collections';
-import { NodeUI } from './';
+import { VertexTypes } from '../../enums';
+import { Dijkstra, MazeGeneratorRecursiveDivision  } from '../../algorithms';
+import { Node } from '../../collections';
+import { NodeUI } from '.';
 
 import { cloneDeep } from 'lodash';
 

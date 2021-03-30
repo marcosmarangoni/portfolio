@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import VertexTypes from '../enums/VertexTypes';
+import VertexTypes from '../../enums/VertexTypes';
 
 interface NodeProps {
   type: VertexTypes,
