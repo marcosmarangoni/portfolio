@@ -14,7 +14,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 function App() {
@@ -22,11 +23,14 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/dijkstra">
+        <Route path="/portfolio/dijkstra">
           <Dijkstra />
         </Route>
-        <Route path="/">
+        <Route path="/portfolio">
           <Home />
+        </Route>
+        <Route path="/">
+          <Redirect to="/portfolio" />
         </Route>
       </Switch>
       <Footer />
@@ -52,7 +56,15 @@ function Home() {
         <div className="container">
           {/* Project One Row */}
           <div className="row justify-content-center no-gutters mb-5 mb-lg-0">
-            <div className="col-lg-6 justify-content-center"><img className="img-fluid" src={HimarketPortalDemonstration} alt="" /></div>
+            <div className="col-lg-6 justify-content-center">
+              <div className="row">
+                <img className="img-fluid" src={HimarketPortalDemonstration} alt="" />
+              </div>
+              <div className="row justify-content-center mt-5">
+                {/* <button className="btn btn-primary m-2">CODE</button>
+                <button className="btn btn-primary m-2">DEMO</button> */}
+              </div>
+            </div>
             <div className="col-lg-6">
               <div className="bg-black text-center h-100 project">
                 <div className="d-flex h-100">
