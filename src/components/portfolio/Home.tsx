@@ -25,7 +25,7 @@ function Home() {
           <div className="row justify-content-center no-gutters mb-5 mb-lg-0">
             <div className="col-lg-6 justify-content-center">
               <div className="row">
-                <img className="img-fluid" src={HimarketPortalDemonstration} alt="" />
+                <img className="img-fluid" src={HimarketLogo} alt="" />
               </div>
               <div className="row justify-content-center mt-5">
                 {/* <button className="btn btn-primary m-2">CODE</button>

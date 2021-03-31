@@ -21,7 +21,7 @@ function Header() {
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="personalProjectsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Personal Projects
+                React Projects
               </a>
               <div className="dropdown-menu" aria-labelledby="personalProjectsDropdown">
                 <Link to="/portfolio/dijkstra" className="dropdown-item">Dijkstra</Link>
