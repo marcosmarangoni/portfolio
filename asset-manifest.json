@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.36a28cf4.chunk.css",
-    "main.js": "./static/js/main.69595530.chunk.js",
-    "main.js.map": "./static/js/main.69595530.chunk.js.map",
+    "main.js": "./static/js/main.1bb9afb5.chunk.js",
+    "main.js.map": "./static/js/main.1bb9afb5.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.9ad48eac.js",
     "runtime-main.js.map": "./static/js/runtime-main.9ad48eac.js.map",
     "static/js/2.d93d7ded.chunk.js": "./static/js/2.d93d7ded.chunk.js",
@@ -12,14 +12,14 @@
     "index.html": "./index.html",
     "static/css/main.36a28cf4.chunk.css.map": "./static/css/main.36a28cf4.chunk.css.map",
     "static/js/2.d93d7ded.chunk.js.LICENSE.txt": "./static/js/2.d93d7ded.chunk.js.LICENSE.txt",
-    "static/js/main.69595530.chunk.js.LICENSE.txt": "./static/js/main.69595530.chunk.js.LICENSE.txt",
+    "static/js/main.1bb9afb5.chunk.js.LICENSE.txt": "./static/js/main.1bb9afb5.chunk.js.LICENSE.txt",
     "static/media/bg-masthead.733fe648.jpg": "./static/media/bg-masthead.733fe648.jpg",
-    "static/media/himarket-portal-demonstration.0d7d4131.gif": "./static/media/himarket-portal-demonstration.0d7d4131.gif"
+    "static/media/himarket-logo.736a4060.png": "./static/media/himarket-logo.736a4060.png"
   },
   "entrypoints": [
     "static/js/runtime-main.9ad48eac.js",
     "static/js/2.d93d7ded.chunk.js",
     "static/css/main.36a28cf4.chunk.css",
-    "static/js/main.69595530.chunk.js"
+    "static/js/main.1bb9afb5.chunk.js"
   ]
 }
