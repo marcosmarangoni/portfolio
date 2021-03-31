@@ -119,3 +119,7 @@
   content: "";
   background-color: #FFF7;
 }
+
+.navbar-brand, .nav-link {
+  cursor: pointer;
+}

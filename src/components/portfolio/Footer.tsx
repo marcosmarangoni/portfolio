@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 function Footer() {
   return (
     <React.Fragment>
-      < section className="contact-section bg-black" id="contacts" >
+      <section className="contact-section bg-black" id="contacts" >
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-4 mb-3 mb-md-0">
