@@ -23,7 +23,7 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/portfolio/dijkstra">
+        <Route exact path="/portfolio/dijkstra">
           <Dijkstra />
         </Route>
         <Route path="/portfolio">
