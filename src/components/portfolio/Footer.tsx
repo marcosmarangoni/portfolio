@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactTooltip from 'react-tooltip';
 
 function Footer() {
   return (
@@ -28,8 +29,16 @@ function Footer() {
             </div>
           </div>
           <div className="social d-flex justify-content-center">
-            <a className="mx-2" href="https://www.linkedin.com/in/marcos-eduardo-marangoni-6927318b/"><i className="fab fa-linkedin"></i></a>
-            <a className="mx-2" href="https://github.com/marcosmarangoni"><i className="fab fa-github"></i></a>
+            <React.Fragment>
+              <a className="mx-2" data-tip="LinkedIn" href="https://www.linkedin.com/in/marcos-eduardo-marangoni-6927318b/"><i className="fab fa-linkedin"></i></a>
+            </React.Fragment>
+            <React.Fragment>
+              <a className="mx-2" data-tip="GitHub" href="https://github.com/marcosmarangoni"><i className="fab fa-github"></i></a>
+            </React.Fragment>
+            <React.Fragment>
+              <a className="mx-2" data-tip="HackerRank" href="https://www.hackerrank.com/morangus2"><i className="fab fa-hackerrank"></i></a>
+              <ReactTooltip />
+            </React.Fragment>
           </div>
         </div>
       </section >
