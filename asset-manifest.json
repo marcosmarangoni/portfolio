@@ -1,31 +1,35 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.1c8b47cd.chunk.css",
-    "main.js": "/portfolio/static/js/main.0d4be8ee.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.0d4be8ee.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.f2d1ceeb.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.f2d1ceeb.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.adf3810e.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.adf3810e.js.map",
-    "static/js/2.1839369e.chunk.js": "/portfolio/static/js/2.1839369e.chunk.js",
-    "static/js/2.1839369e.chunk.js.map": "/portfolio/static/js/2.1839369e.chunk.js.map",
+    "static/js/2.9a93f9a5.chunk.js": "/portfolio/static/js/2.9a93f9a5.chunk.js",
+    "static/js/2.9a93f9a5.chunk.js.map": "/portfolio/static/js/2.9a93f9a5.chunk.js.map",
     "static/js/3.171d9192.chunk.js": "/portfolio/static/js/3.171d9192.chunk.js",
     "static/js/3.171d9192.chunk.js.map": "/portfolio/static/js/3.171d9192.chunk.js.map",
     "index.html": "/portfolio/index.html",
     "static/css/main.1c8b47cd.chunk.css.map": "/portfolio/static/css/main.1c8b47cd.chunk.css.map",
-    "static/js/2.1839369e.chunk.js.LICENSE.txt": "/portfolio/static/js/2.1839369e.chunk.js.LICENSE.txt",
+    "static/js/2.9a93f9a5.chunk.js.LICENSE.txt": "/portfolio/static/js/2.9a93f9a5.chunk.js.LICENSE.txt",
     "static/media/assets_home.b1289ebb.png": "/portfolio/static/media/assets_home.b1289ebb.png",
     "static/media/bg-masthead.733fe648.jpg": "/portfolio/static/media/bg-masthead.733fe648.jpg",
     "static/media/himarket-logo.736a4060.png": "/portfolio/static/media/himarket-logo.736a4060.png",
-    "static/media/home.9c93391d.png": "/portfolio/static/media/home.9c93391d.png",
+    "static/media/home.6c96dcae.png": "/portfolio/static/media/home.6c96dcae.png",
     "static/media/posttracking1.2fdc1b4b.png": "/portfolio/static/media/posttracking1.2fdc1b4b.png",
     "static/media/posttracking2.5447ea99.png": "/portfolio/static/media/posttracking2.5447ea99.png",
     "static/media/posttracking3.469a21b5.png": "/portfolio/static/media/posttracking3.469a21b5.png",
     "static/media/posttracking4.418e161e.png": "/portfolio/static/media/posttracking4.418e161e.png",
-    "static/media/posttracking5.c8294a2d.png": "/portfolio/static/media/posttracking5.c8294a2d.png"
+    "static/media/posttracking5.c8294a2d.png": "/portfolio/static/media/posttracking5.c8294a2d.png",
+    "static/media/product_description.499ee91f.png": "/portfolio/static/media/product_description.499ee91f.png",
+    "static/media/product_description2.8b5c8c83.png": "/portfolio/static/media/product_description2.8b5c8c83.png",
+    "static/media/product_order.d3ef426e.png": "/portfolio/static/media/product_order.d3ef426e.png",
+    "static/media/products.2dd0cabe.png": "/portfolio/static/media/products.2dd0cabe.png"
   },
   "entrypoints": [
     "static/js/runtime-main.adf3810e.js",
-    "static/js/2.1839369e.chunk.js",
+    "static/js/2.9a93f9a5.chunk.js",
     "static/css/main.1c8b47cd.chunk.css",
-    "static/js/main.0d4be8ee.chunk.js"
+    "static/js/main.f2d1ceeb.chunk.js"
   ]
 }
