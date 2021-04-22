@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import './utils/scripts';
 
 import { Header, Footer, Home } from './components/portfolio';
 
 import { DataStructureVisualizer } from './components/data_structure_visualizer';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
