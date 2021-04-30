@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactTooltip from 'react-tooltip';
 import { Row, Carousel } from 'react-bootstrap';
 
@@ -14,8 +14,45 @@ interface ProjectProps {
 
 function Project(props: ProjectProps) {
 
+  const projectRef = useRef<HTMLDivElement>(null);
+  const observer = new IntersectionObserver(([entry]) => {
+    if(!projectRef.current) return;
+    if(!projectRef.current.classList.contains('start') && entry.isIntersecting) {
+      projectRef.current.classList.add('start');
+    }
+  }, {
+    threshold: 0.5
+  });
+
+  useEffect(() => {
+    if(projectRef.current) observer.observe(projectRef.current);
+    return () => {
+      observer.disconnect();
+    }
+  }, [])
+
+  const isInViewport = (ev: Event) => {
+    if(!projectRef.current) return;
+
+    //get how much pixels left to scrolling our ReactElement
+    const bottom = projectRef.current.getBoundingClientRect().bottom;
+
+    //here we check if element top reference is on the top of viewport
+    /*
+    * If the value is positive then top of element is below the top of viewport
+    * If the value is zero then top of element is on the top of viewport
+    * If the value is negative then top of element is above the top of viewport
+    * */
+   const offset = 0.2 * window.innerHeight;
+    if(bottom <= window.innerHeight + offset){
+        if(!projectRef.current.classList.contains('start')) {
+          projectRef.current.classList.add('start');
+        }
+    }
+};
+
   return (
-    <div className="horizontal-project-grid shadow-lg mt-2 mb-4">
+    <div ref={projectRef} className="horizontal-project-grid shadow-lg mt-2 mb-4">
       <Row noGutters className="justify-content-center">
         {props.images.length <= 1 ?
           <img
