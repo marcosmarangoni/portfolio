@@ -9,7 +9,6 @@ import WarehouseManagerPhotos from '../../img/warehouse_manager';
 
 import Project from './components/Project';
 
-
 function Home() {
 
   const workExperience = [
@@ -66,7 +65,7 @@ function Home() {
           <div className="mx-auto text-center">
             <h1 className="mx-auto my-0 text-uppercase">Marcos Marangoni</h1>
             <h2 className="text-white-50 mx-auto mt-2 mb-5">Ruby and Rails developer, with 2 years of experience in full stack development.</h2>
-            <a className="btn btn-primary js-scroll-trigger" href="/Resume.docx" download>Download Resume</a>
+            {/* <a className="btn btn-primary js-scroll-trigger" href="/Resume.docx" download>Download Resume</a> */}
           </div>
         </div>
       </header>
