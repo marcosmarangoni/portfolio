@@ -12,14 +12,6 @@ class MazeGeneratorRecursiveDivision {
   rows: number;
 
   constructor(rows: number, cols: number) {
-
-    /*
-    this.width = width;
-    this.height = height;
-
-    this.cols = 2 * this.width + 1;
-    this.rows = 2 * this.height + 1;*/
-
     this.width = cols / 2 - 1;
     this.height = rows / 2 - 1;
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { VertexTypes } from '../../enums';
-import { Dijkstra, MazeGeneratorRecursiveDivision  } from '../../algorithms';
+import { Dijkstra, MazeGeneratorRecursiveDivision, Utils  } from '../../algorithms';
 import { Node } from '../../collections';
 import { NodeUI } from '.';
 
-import { cloneDeep } from 'lodash';
+import { cloneDeep, reject } from 'lodash';
 
 function DataStructureVisualizer() {
 
@@ -13,104 +13,33 @@ function DataStructureVisualizer() {
 
   const ROWS: number = 21;
   const COLS: number = 31;
+  const ANIMATION_DELAY: number = 15;
 
-  let [startRow, setStartRow] = useState(ROWS/2);
-  let [startCol, setStartCol] = useState(1);
-
-  let [endRow, setEndRow] = useState(ROWS/2);
-  let [endCol, setEndCol] = useState(COLS - 2);
+  let [start, setStart] = useState({ row: ROWS/2, col: 1 });
+  let [end, setEnd] = useState({ row: ROWS/2, col: COLS - 2 });
 
   let [grid, setGrid] = useState(Array.from(Array(ROWS), () => new Array(COLS)));
   let [visitedNodes, setVisitedNodes] = useState(Array<Node>());
   let [insertWall, setInsertWall] = useState(false);
 
   useEffect(() => {
-    startGrid();
+    reset();
   }, [])
-
-
-  let startGrid = () => {
-    let tmpGrid = Array.from(Array(ROWS), () => new Array(COLS));
-    for(let i = 0; i<tmpGrid.length; i++) {
-      for(let j=0; j<tmpGrid[i].length; j++) {
-        if(i === startRow && j=== startCol) tmpGrid[i][j] = new Node(i, j, 0, VertexTypes.START_VERTEX);
-        else if(i === endRow && j=== endCol) tmpGrid[i][j] = new Node(i, j, Infinity, VertexTypes.END_VERTEX);
-        else tmpGrid[i][j] = new Node(i, j);
-      }
-    }
-    setGrid(tmpGrid);
-  }
-
-  const solvePath = (e: any) => {
-    if(visitedNodes.length > 0) {
-      console.log('RESET');
-      return;
-    }
-
-    console.log(grid);
-    const dijkstra = new Dijkstra(grid, grid[startRow][startCol], grid[endRow][endCol]);
-    const paths = dijkstra.shortestPath();
-    if(!paths) return;
-    setVisitedNodes(paths.visitedNodes);
-    let newGrid = cloneDeep(grid);
-    paths.visitedNodes.forEach((n,i) => {
-      setTimeout(() => {
-        newGrid = cloneDeep(newGrid);
-        newGrid[n.row][n.col] = new Node(n.row,n.col,n.distance,VertexTypes.VISITED_VERTICE);
-        newGrid[n.row][n.col].previous = n.previous;
-        setGrid(newGrid);
-        if(i === paths.visitedNodes.length - 1) {
-          setTimeout(() => {
-            animateShortestPath(cloneDeep(newGrid), paths.shortestPath)
-          }, 2000);
-        }
-      }, i * 40);
-    });
-  }
-
-  const animateShortestPath = (newGrid: Node[][] , shortestPath: Array<Node>) => {
-    shortestPath.pop();
-    shortestPath.forEach((n,i) => {
-      setTimeout(() => {
-        newGrid = cloneDeep(newGrid);
-        newGrid[n.row][n.col] = new Node(n.row,n.col,n.distance,VertexTypes.SHORT_PATH);
-        newGrid[n.row][n.col].previous = n.previous;
-        setGrid(newGrid);
-      }, i * 40);
-    });
-  }
-
-  const reset = () => {
-    startGrid();
-    setVisitedNodes(Array<Node>());
-  }
 
   const generateRandomMaze = () => {
     let newGrid = cloneDeep(grid);
     let mazeGenerator = new MazeGeneratorRecursiveDivision(ROWS,COLS);
-    console.log(mazeGenerator.maze);
-    /*let result = mazeGenerator.initArray;
-    if(!result) return;*/
-    console.log(mazeGenerator.maze);
     mazeGenerator.maze.forEach((row, rIdx) => {
       row.forEach((col, cIdx) => {
         if(col.includes('entrance')) {
           newGrid[rIdx][cIdx].vertexType = VertexTypes.START_VERTEX;
           newGrid[rIdx][cIdx].distance = 0;
-          setStartCol(cIdx);
-          setStartRow(rIdx);
-          console.log('START ROW ' + rIdx);
-          console.log('START COL ' + cIdx);
+          setStart({ row: rIdx, col: cIdx });
         } else if(col.includes('exit')) {
           newGrid[rIdx][cIdx].vertexType = VertexTypes.END_VERTEX;
           newGrid[rIdx][cIdx].distance = Infinity;
-          setEndCol(cIdx);
-          setEndRow(rIdx);
-          console.log('END ROW ' + rIdx);
-          console.log('END COL ' + cIdx);
+          setEnd({ row: rIdx, col: cIdx });
         } else if(col.includes('wall')) {
-          console.log('WALL ROW ' + rIdx);
-          console.log('WALL COL ' + cIdx);
           newGrid[rIdx][cIdx].vertexType = VertexTypes.WALL;
           newGrid[rIdx][cIdx].distance = Infinity;
         } else {
@@ -122,10 +51,48 @@ function DataStructureVisualizer() {
     setGrid(newGrid);
   }
 
+  const solvePath = async (e: any) => {
+    const dijkstra = new Dijkstra(grid, grid[start.row][start.col], grid[end.row][end.col]);
+    const paths = dijkstra.shortestPath();
+    if(!paths || visitedNodes.length > 0) return;
+    setVisitedNodes(paths.visitedNodes);
+
+    let newGrid = cloneDeep(grid);
+    for(let i=0; i<paths.visitedNodes.length; i++) {
+      newGrid = await generateAnimationPromise(newGrid, paths.visitedNodes[i]);
+    }
+    await new Promise((resolve, reject) => setTimeout(resolve, 2000));
+    for(let i=0; i<paths.shortestPath.length - 1; i++) {
+      newGrid = await generateAnimationPromise(newGrid, paths.shortestPath[i], true);
+    }
+  }
+
+  const reset = () => {
+    let tmpGrid = Array.from(Array(ROWS), () => new Array(COLS));
+    for(let i = 0; i<tmpGrid.length; i++) {
+      for(let j=0; j<tmpGrid[i].length; j++) {
+        tmpGrid[i][j] = new Node(i, j);
+      }
+    }
+    setGrid(tmpGrid);
+    setVisitedNodes(Array<Node>());
+  }
+
+  const generateAnimationPromise = (newGrid: Node[][], node: Node, shortPath = false): Promise<Node[][]> => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let newNode = new Node(node.row,node.col,node.distance, shortPath ? VertexTypes.SHORT_PATH : VertexTypes.VISITED_VERTICE);
+        newNode.previous = node.previous;
+        newGrid = Utils.toggleNode(newGrid, newNode);
+        setGrid(newGrid);
+        resolve(newGrid);
+      }, ANIMATION_DELAY);
+    });
+  }
+
   const onMouseDown = (e: any) => {
     setInsertWall(true);
   }
-
   const onMouseUp = (e: any) => {
     setInsertWall(false);
   }

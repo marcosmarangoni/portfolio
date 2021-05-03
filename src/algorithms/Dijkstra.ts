@@ -40,7 +40,7 @@ class Dijkstra {
           verticeNeighbors[i].previous = vertice;
         }
       }
-    } while(!this.minHeap.peek()?.isEndVertex())
+    } while(!this.minHeap.peek()?.isEndVertex() || this.minHeap.isEmpty())
 
     let currentNode = this.grid[this.endNode.row][this.endNode.col];
     let shortestPath: Array<Node> = []
@@ -48,7 +48,6 @@ class Dijkstra {
       currentNode = currentNode.previous;
       shortestPath.push(currentNode);
     }
-    console.log(shortestPath);
     return {
       visitedNodes,
       shortestPath

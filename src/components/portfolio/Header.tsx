@@ -40,7 +40,7 @@ function Header() {
   }, [])
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light fixed-top navbar-shrink" id="mainNav" ref={mainNavRef}>
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" ref={mainNavRef}>
       <div className="container">
         <HashLink smooth className="navbar-brand js-scroll-trigger" to="/portfolio#masthead">Portfolio</HashLink>
         <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

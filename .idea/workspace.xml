@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8187b0ce-b7b8-4694-87a7-04e78676fba0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/algorithms/Dijkstra.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/Dijkstra.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algorithms/MazeGeneratorRecursiveDivision.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithms/MazeGeneratorRecursiveDivision.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/MinHeap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/collections/MinHeap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data_structure_visualizer/DataStructureVisualizer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_structure_visualizer/DataStructureVisualizer.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1s2okS7fKyWDU0TpvTjsqnp7WIP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8187b0ce-b7b8-4694-87a7-04e78676fba0" name="Default Changelist" comment="" />
+      <created>1620080187575</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620080187575</updated>
+      <workItem from="1620080189042" duration="258000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620080253124">
+      <screen x="0" y="23" width="1920" height="966" />
+    </state>
+    <state x="424" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.966@0.23.1920.966" timestamp="1620080253124" />
+    <state x="469" y="145" key="SettingsEditor" timestamp="1620080362023">
+      <screen x="0" y="23" width="1920" height="966" />
+    </state>
+    <state x="469" y="145" key="SettingsEditor/0.23.1920.966@0.23.1920.966" timestamp="1620080362023" />
+  </component>
+</project>

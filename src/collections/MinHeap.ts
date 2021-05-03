@@ -75,6 +75,10 @@ class MinHeap<T> {
   peek(): T | undefined {
     return this.isEmpty() ? undefined : this.items[0];
   }
+
+  length() {
+    return this.items.length;
+  }
 }
 
 export default MinHeap;
