@@ -15,6 +15,7 @@ function Home() {
     {
       tecnologies: ['Vue.js', 'Ruby on Rails', 'Google Cloud', 'Kubernetes', 'Docker', 'Bootstrap'],
       title: 'HiMarket (2018-2020)',
+      mainLink: 'https://portal.himarket.club/',
       description: `Worked in a project with Ruby and Rails, for the backend, and Vue.js, for the frontend.
       The project was based on building a portal to provide automated data analysis to clients.
       I had to build a dynamic filter, and work with a third party graph library called Metabase.`,
@@ -26,33 +27,33 @@ function Home() {
     {
       tecnologies: ['Node.js', 'JWT', 'Android', 'MongoDB', 'Bootstrap', 'NPM', 'React.js', 'Express.js'],
       title: 'IRR Assets Calculator',
-      description: `IRR (Internal Rate of Return) is used to calculate the profitability of potential investments.
-      To calculate it you need to set the NPV to 0 and recursively iterate in a function with different discount until
-      you find something that is close to 0, this discount being the IRR.`,
+      description: `This project was made to calculate the IRR (Internal Rate of Return),
+      which is used to calculate the profitability of potential investments. It's separated in frontend and backend,
+      with a cherry on the top using android.`,
       images: AssetsPhotos,
-      backendLink: 'https://github.com/cesarreboucas/Assets_Node',
-      frontendLink: 'https://github.com/cesarreboucas/Assets_React',
-      androidLink: 'https://github.com/MarcosMarangoniDouglas/Assets_Mobile'
+      backendLink: 'https://github.com/marcosmarangoni/assets',
+      frontendLink: 'https://github.com/marcosmarangoni/Assets_React',
+      androidLink: 'https://github.com/marcosmarangoni/Assets_Mobile'
     },
     {
       tecnologies: ['Java', 'Spring Boot', 'Maven', 'ThymeLeaf', 'JQuery'],
       title: 'PostTracking',
-      description: `In this project we made a way to create packages, assign vehicles to transport the
-      packages and a way to create a path between an origin and a destination, it is possible to put side
-      destinations. With these 3 things we were able to calculate the best path for the packages with a Breadth First algorithm.`,
+      description: `In this project we made kind of a logistics management. In addition, the manager would assign new packages, putting the
+      size, weight and their destination. The final action would be to calculate the best way to transport the package, which would choose 
+      the best vehicle available for that based on a series of algorithms.`,
       images: PostTrackingPhotos,
-      backendLink: 'https://github.com/cesarreboucas/PostTracking'
+      backendLink: 'https://github.com/marcosmarangoni/PostTracking'
     },
     {
       tecnologies: ['Java', 'Firebase', 'Android', 'MySQL', 'Node.js', 'Retrofit', 'Express.js'],
       title: 'WarehouseManager',
-      description: `This project had 3 contexts: Client, Warehouse Workers and Administrators. The administrator would
-       make the orders for the Warehouse. Then the warehouse workers would check if the products are inside the 
-      warehouse or not. After the products were inside the werehouse the administrator could sell those products to the clients. The clients
+      description: `This project had 3 contexts: Client, Warehouse Workers and Administrators. Firstly, the administrator would
+       make the orders for the Warehouse. Secondly, the warehouse workers would check if the products are inside the 
+      warehouse or not. Finally, after the products were inside the werehouse the administrator could sell those products to the clients. The clients
       could put the products on a shopping cart and then order it. We saved the images of the project inside Firebase, by transforming
       the image bytes into a Base64 string.`,
       images: WarehouseManagerPhotos,
-      backendLink: 'https://github.com/cesarreboucas/WarehousemanagerNode',
+      backendLink: 'https://github.com/marcosmarangoni/WarehousemanagerNode',
       androidLink: 'https://github.com/cesarreboucas/WarehouseManager'
     }
   ]

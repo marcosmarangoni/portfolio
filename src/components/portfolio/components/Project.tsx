@@ -9,7 +9,8 @@ interface ProjectProps {
   images: Array<string>,
   frontendLink?: string,
   backendLink?: string,
-  androidLink?: string
+  androidLink?: string,
+  mainLink?: string,
 }
 
 function Project(props: ProjectProps) {
@@ -25,31 +26,11 @@ function Project(props: ProjectProps) {
   });
 
   useEffect(() => {
-    if(projectRef.current) observer.observe(projectRef.current);
+    // if(projectRef.current) observer.observe(projectRef.current);
     return () => {
       observer.disconnect();
     }
   }, [])
-
-  const isInViewport = (ev: Event) => {
-    if(!projectRef.current) return;
-
-    //get how much pixels left to scrolling our ReactElement
-    const bottom = projectRef.current.getBoundingClientRect().bottom;
-
-    //here we check if element top reference is on the top of viewport
-    /*
-    * If the value is positive then top of element is below the top of viewport
-    * If the value is zero then top of element is on the top of viewport
-    * If the value is negative then top of element is above the top of viewport
-    * */
-   const offset = 0.2 * window.innerHeight;
-    if(bottom <= window.innerHeight + offset){
-        if(!projectRef.current.classList.contains('start')) {
-          projectRef.current.classList.add('start');
-        }
-    }
-};
 
   return (
     <div ref={projectRef} className="horizontal-project-grid shadow-lg mt-2 mb-4">
@@ -88,23 +69,29 @@ function Project(props: ProjectProps) {
                 {props.description}
               </p>
               <hr className="d-none d-lg-block mb-0 ml-0" />
-              {(props.frontendLink || props.backendLink || props.androidLink) &&
+              {(props.frontendLink || props.backendLink || props.androidLink || props.mainLink) &&
                 <div className="social d-flex justify-content-center code-tag-border mt-2">
                   {props.backendLink &&
                     <React.Fragment>
-                      <a className="mx-2" href={props.frontendLink} data-tip="Back end code"><i className="fas fa-hdd"></i></a>
+                      <a className="mx-2" href={props.backendLink} target="_blank" data-tip="Back end code"><i className="fas fa-hdd"></i></a>
                       <ReactTooltip />
                     </React.Fragment>
                   }
                   {props.frontendLink &&
                     <React.Fragment>
-                      <a className="mx-2" href={props.backendLink} data-tip="Front end code"><i className="fas fa-desktop"></i></a>
+                      <a className="mx-2" href={props.frontendLink} target="_blank" data-tip="Front end code"><i className="fas fa-desktop"></i></a>
                       <ReactTooltip />
                     </React.Fragment>
                   }
                   {props.androidLink &&
                     <React.Fragment>
-                      <a className="mx-2" href={props.androidLink} data-tip="Mobile code"><i className="fab fa-android"></i></a>
+                      <a className="mx-2" href={props.androidLink} target="_blank" data-tip="Mobile code"><i className="fab fa-android"></i></a>
+                      <ReactTooltip />
+                    </React.Fragment>
+                  }
+                  {props.mainLink &&
+                    <React.Fragment>
+                      <a className="mx-2" href={props.mainLink} target="_blank" data-tip="Main Website"><i className="fa fa-link"></i></a>
                       <ReactTooltip />
                     </React.Fragment>
                   }

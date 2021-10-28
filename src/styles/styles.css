@@ -173,7 +173,7 @@
 }
 
 .horizontal-project-grid {
-  visibility: hidden;
+  visibility: visible;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
